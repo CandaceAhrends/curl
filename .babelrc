@@ -1,0 +1,10 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        ["@babel/preset-react", { "development": true }],
+        ["@babel/preset-env", { "targets": { "esmodules": true } }]
+      ]
+    }
+  }
+}

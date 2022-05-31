@@ -1,0 +1,1 @@
+ curl --request PUT     --header "PRIVATE-TOKEN: your_access_token_here"     --data "long=true"     --data "per_page=10"     "https://example.com/api/v4/namespaces"

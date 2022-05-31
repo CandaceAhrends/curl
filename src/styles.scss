@@ -1,0 +1,84 @@
+$font: "venir-Heavy, sans-serif";
+$primary: #1eaedb;
+$bgColor-light: #2a2b2e;
+$secondary-color: #282c31;
+$main-color: #1eaedb;
+$content-background: #18191a;
+
+body {
+  margin: 0;
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  font-family: $font;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-container {
+  margin: 0 auto;
+}
+@media (min-width: 576px) {
+  .main-container {
+    max-width: calc(576px - (30px * 2));
+  }
+}
+@media (min-width: 768px) {
+  .main-container {
+    max-width: calc(768px - (30px * 2));
+  }
+}
+@media (min-width: 992px) {
+  .main-container {
+    max-width: calc(992px - (30px * 2));
+  }
+}
+@media (min-width: 1200px) {
+  .main-container {
+    max-width: calc(1200px - (30px * 2));
+  }
+}
+
+//@include clickable-img-link("1.5rem 0.7rem 0 0.7rem");
+@mixin content-area {
+  width: 100%;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin clickable-img-link($padding) {
+  a {
+    padding: #{$padding};
+    img {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@mixin clickable() {
+  cursor: pointer;
+}
+
+//FACEBOOK
+$facebook-text: #e4e6eb;
+$facebook-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  sans-serif;
+$roboto-fontr: "Roboto, sans-serif";

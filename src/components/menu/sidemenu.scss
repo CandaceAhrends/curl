@@ -1,0 +1,32 @@
+nav {
+  height: 100vh;
+  &.side-nav {
+    background: black;
+    ul {
+      padding: 5rem 0;
+      li {
+        color: rgb(230, 230, 230);
+        position: relative;
+        font-size: 1.2rem;
+        height: 50px;
+        padding: 0.2rem 1rem;
+        display: flex;
+        align-items: center;
+        &.active a {
+          color: rgb(144, 202, 249);
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50px;
+          width: 66%;
+          border-bottom: 1px solid rgb(62, 62, 62);
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: rgb(24, 41, 52) !important;
+        }
+      }
+    }
+  }
+}
