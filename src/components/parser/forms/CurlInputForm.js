@@ -4,15 +4,15 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import { Button } from "@mui/material";
-import { saveDataRequest, saveCurlRequest } from "../../actions";
+import { saveDataRequest } from "../../actions";
 import CurlActions from "./CurlActions";
 import DataInputForm from "./DataInputForm";
-import { postData } from "../../../api/suspenseFetch";
+import { fetchData } from "../../../api/suspenseFetch";
 import { parse } from "../parser";
 import "./form.scss";
 
 const fetchSavedData = (fileName) =>
-  postData("http://localhost:5000/read/data", { fileName });
+  fetchData(`http://localhost:5000/data/${fileName}`);
 
 const CurlInputForm = ({ curlResource, listResource, handleParsedCurl }) => {
   const loadedCurl = curlResource ? curlResource.read() : { content: "" };

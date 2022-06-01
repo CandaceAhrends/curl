@@ -9,9 +9,9 @@ import TabResults from "./TabResults";
 import "./index.scss";
 
 const fetchCurl = (fileName) =>
-  postData("http://localhost:5000/read", { fileName });
+  fetchData(`http://localhost:5000/curls/${fileName}`);
 
-const fetchDataList = () => fetchData("http://localhost:5000/list/data");
+const fetchDataList = () => fetchData("http://localhost:5000/data");
 
 export default () => {
   const { id } = useParams();

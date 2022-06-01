@@ -19,12 +19,12 @@ app.use(
 );
 
 app.post("/curl", curlRequest);
-app.post("/save", saveRequest);
-app.post("/save/data", saveDataRequest);
-app.get("/list", listRequest);
-app.get("/list/data", listData);
-app.post("/read", readRequest);
-app.post("/read/data", readDataRequest);
+app.post("/curls", saveRequest);
+app.post("/data", saveDataRequest);
+app.get("/curls", listRequest);
+app.get("/data", listData);
+app.get("/curls/:file", readRequest);
+app.get("/data/:file", readDataRequest);
 
 const PORT = 5000;
 

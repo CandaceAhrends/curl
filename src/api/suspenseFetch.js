@@ -8,9 +8,9 @@ const wrapPromise = (promise) => {
     (res) => {
       status = "success"; //"http://localhost:5000/list"
       const url = res?.config?.url;
-      if (/\/list$/.test(url)) {
+      if (/\/curls$/.test(url)) {
         console.log("url has list ..>>>>", url, res.data);
-        response = transformers["list"](res.data);
+        if (res.data.list) response = transformers["list"](res.data);
       } else {
         response = res.data;
       }

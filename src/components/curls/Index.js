@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import FilterForm from "./FilterForm";
 import List from "./List";
-//import Execute from "./Execute";
-import { postData, fetchData } from "../../api/suspenseFetch";
+
+import { fetchData } from "../../api/suspenseFetch";
 import { ErrorBoundary } from "react-error-boundary";
 import "./index.scss";
 
@@ -14,13 +14,11 @@ function ErrorFallback({ error, resetErrorBoundary }) {
     </div>
   );
 }
-const fetchCurl = (fileName) =>
-  postData("http://localhost:5000/read", { fileName });
+
 const getListResource = () => {
-  return fetchData("http://localhost:5000/list");
+  return fetchData("http://localhost:5000/curls");
 };
 export default () => {
-  // const [fileName, setFileName] = React.useState("");
   const [query, setQuery] = React.useState({ search: "" });
 
   const handleSearch = (formQuery) => {
@@ -32,9 +30,6 @@ export default () => {
         <Suspense fallback={"Loading..."}>
           <FilterForm handleSearch={handleSearch}></FilterForm>
           <List resource={getListResource()} query={query}></List>
-          {/* {fileName.length ? (
-            <Execute resource={fetchCurl(fileName)}></Execute>
-          ) : null} */}
         </Suspense>
       </ErrorBoundary>
     </div>

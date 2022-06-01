@@ -1,6 +1,6 @@
 import React from "react";
 import ActionCard from "../common/ActionCard";
-import { saveCurlRequest, testCurlRequest } from "../actions";
+import { testCurlRequest } from "../actions";
 
 const exeActions = [{ name: "Test Command", id: "test" }];
 
